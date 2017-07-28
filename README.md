@@ -1,4 +1,4 @@
-# URLDefenseDecoder
+# URLDefenseDecoder <img style="float: left;" hspace="13" src="icons/48.png">  
 URLDefenseDecoder is a Chrome Extension which provides the ability to "copy a decoded Proofpoint URLDefense URL to clipboard via Chrome's right-click context menu."
 
 ## Usage
@@ -40,7 +40,7 @@ v0.0.2 - Bug Fixes and Enhancements
 - The duplicate/nested context menu entries for hyperlinks no longer shows up (granted you're not encountering a newly discovered bug)
 - The popup can now be used for manual decoding of pasted URLDefense URLs
 - New icon, higher resolution support
-- Dedicated CHANGELOG file
+- Dedicated [CHANGELOG](CHANGELOG.md) file
 
 
 #### 2017-07-26
