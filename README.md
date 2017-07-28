@@ -6,6 +6,14 @@ Right-Click a URLDefense encoded URL, or triple-click-select-all of a plaintext 
 
 ![Screenshot](assets/URLDefenseDecoder_screenshot01.png)
 
+Or you can also manually paste encoded urls into the extension popup box from the toolbar.
+
+![Screenshot](assets/URLDefenseDecoder_screenshot02.png)
+
+## A Note on Permissions
+
+![Screenshot](assets/URLDefenseDecoder_screenshot03.png)
+
 ## Known/Potential Issues
 
 All of which should be cleaned up in due time...
