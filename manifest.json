@@ -3,6 +3,7 @@
 
   "manifest_version": 2,
   "name": "URLDefenseDecoder",
+  "short_name": "URLDefenseDecoder",
   "description": "Copy a decoded Proofpoint URLDefense URL to clipboard via Chrome's right-click context menu.",
   "version": "0.0.2",
   "browser_action": {
