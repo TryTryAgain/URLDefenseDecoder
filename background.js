@@ -41,7 +41,6 @@ for (var i = 0; i < contexts.length; i++) {
     function onClickHandler(info) {
       var lText = info.linkUrl;
       if (/https:\/\/urldefense.proofpoint.com\/v1/.test(lText)) {
-        //alert("v1 lText = " + lText)
         var reg = /u=(.+?)&k=/;
         var specialencodedurl = lText.match(reg);
         var transurl = specialencodedurl[1];
@@ -49,7 +48,6 @@ for (var i = 0; i < contexts.length; i++) {
         var url = decodedurl;
         copyToClipboard(decodedurl)
       } else if (/https:\/\/urldefense.proofpoint.com\/v2/.test(lText)) {
-        //alert("v2 lText = " + lText)
         var reg = /u=(.+?)&[dc]=/;
         var specialencodedurl = lText.match(reg);
         var transurl = specialencodedurl[1]
@@ -60,22 +58,21 @@ for (var i = 0; i < contexts.length; i++) {
         copyToClipboard(decodedurl)
       }
     };
-        chrome.contextMenus.removeAll(function() {
-        chrome.contextMenus.create({
-          "title": title,
-          "id": "linkid",
-          "contexts": ["link"],
-          "onclick": genericOnClick,
-          "targetUrlPatterns": ["https://urldefense.proofpoint.com/*"]
-          });
-        });
+    chrome.contextMenus.removeAll(function() {
+      chrome.contextMenus.create({
+        "title": title,
+        "id": "linkid",
+        "contexts": ["link"],
+        "onclick": genericOnClick,
+        "targetUrlPatterns": ["https://urldefense.proofpoint.com/*"]
+      });
+    });
   } else if (context === "selection") {
     chrome.contextMenus.onClicked.addListener(onClickHandler);
 
     function onClickHandler(info) {
       var sText = info.selectionText;
       if (/https:\/\/urldefense.proofpoint.com\/v1/.test(sText)) {
-        //alert("v1 sText = " + sText)
         var reg = /u=(.+?)&k=/;
         var specialencodedurl = sText.match(reg);
         var transurl = specialencodedurl[1];
@@ -83,7 +80,6 @@ for (var i = 0; i < contexts.length; i++) {
         var url = decodedurl;
         copyToClipboard(decodedurl)
       } else if (/https:\/\/urldefense.proofpoint.com\/v2/.test(sText)) {
-        //alert("v2 sText = " + sText)
         var reg = /u=(.+?)&[dc]=/;
         var specialencodedurl = sText.match(reg);
         var transurl = specialencodedurl[1]
@@ -94,15 +90,29 @@ for (var i = 0; i < contexts.length; i++) {
         copyToClipboard(decodedurl)
       }
     };
-      chrome.contextMenus.removeAll(function() {
-      chrome.contextMenus.create({
-        "title": title,
-        "id": "selectid",
-        "contexts": ["selection"],
-        "onclick": genericOnClick,
-        "targetUrlPatterns": ["https://urldefense.proofpoint.com/*"]
-      });
-    });
 
+    var selectionid;
+    chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
+      if (msg.request === 'updateContextMenu') {
+        var type = msg.selection;
+        if (/https:\/\/urldefense.proofpoint.com/.test(type)) {
+          var options = {
+            title: title,
+            contexts: ["selection"],
+            onclick: genericOnClick
+          };
+          if (selectionid != null) {
+            chrome.contextMenus.update(selectionid, options);
+          } else {
+            selectionid = chrome.contextMenus.create(options);
+          }
+        } else {
+          if (selectionid != null) {
+            chrome.contextMenus.remove(selectionid);
+            selectionid = null;
+          }
+        }
+      }
+    });
   }
 }
