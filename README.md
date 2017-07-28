@@ -1,5 +1,5 @@
-# URLDefenseDecoder <img style="float: left;" hspace="13" src="icons/48.png">  
-URLDefenseDecoder is a Chrome Extension which provides the ability to "copy a decoded Proofpoint URLDefense URL to clipboard via Chrome's right-click context menu."
+# URLDefenseDecoder  
+<img style="float: left;" hspace="13" src="icons/48.png"> URLDefenseDecoder is a Chrome Extension which provides the ability to "copy a decoded Proofpoint URLDefense URL to clipboard via Chrome's right-click context menu."
 
 ## Usage
 Right-Click a URLDefense encoded URL, or triple-click-select-all of a plaintext URLDefense URL, and right-click to get a Chrome Context Menu option called "Copy URLDefense-Decoded-Link". Click that menu item and the link will be copied to your clipboard.
