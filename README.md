@@ -1,6 +1,6 @@
 # URLDefenseDecoder  
 <div>
-<img style="float: left" vertical-align: "baseline" hspace="13" src="icons/48.png"> URLDefenseDecoder is a Chrome Extension which provides the ability to "copy a decoded Proofpoint URLDefense URL to clipboard via Chrome's right-click context menu."
+ URLDefenseDecoder is a Chrome Extension which provides the ability to <img align=left hspace="13" src="icons/48.png"> "copy a decoded Proofpoint URLDefense URL to clipboard via Chrome's right-click context menu."
 </div>
 
 ## Usage
