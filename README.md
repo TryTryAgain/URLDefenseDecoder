@@ -4,13 +4,9 @@
 </div>
 
 ## Usage
-Right-Click a URLDefense encoded URL, or triple-click-select-all of a plaintext URLDefense URL, and right-click to get a Chrome Context Menu option called "Copy URLDefense-Decoded-Link". Click that menu item and the link will be copied to your clipboard.
+Right-Click a URLDefense encoded URL, or triple-click-select-all of a plaintext URLDefense URL, and right-click to get a Chrome Context Menu option called "Copy URLDefense-Decoded-Link". Click that menu item and the link will be copied to your clipboard. Or you can also manually paste encoded urls into the extension popup box from the toolbar.
 
 ![Screenshot](assets/URLDefenseDecoder_screenshot01.png)
-
-Or you can also manually paste encoded urls into the extension popup box from the toolbar.
-
-![Screenshot](assets/URLDefenseDecoder_screenshot02.png)
 
 ## A Note on Permissions
 
